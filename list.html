@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List View</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body id="list">
+    <h1>Manage My Tasks</h1>
+    <div class="view-selector">
+        <a href="list.html"><button id="listViewBtn">List</button></a>
+        <a href="calender.html"><button id="calendarViewBtn">Calendar</button></a>
+        <a href="board.html"><button id="boardViewBtn">Board</button></a>
+    </div>
+
+    <div class="container">
+        <h2>General Tasks</h2>
+        <ul id="generalTasksList" class="task-list"></ul>
+        <input type="text" id="newGeneralTaskInput" placeholder="New Task">
+        <button id="addGeneralTaskBtn">Add Task</button>
+        <h2>Do Today</h2>
+        <ul id="doTodayList" class="task-list"></ul>
+        <input type="text" id="newDoTodayTaskInput" placeholder="New Task">
+        <button id="addDoTodayTaskBtn">Add Task</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board View</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+<body id="board">
+    <h1>Manage My Tasks</h1>
+    <div class="view-selector">
+        <a href="list.html"><button id="listViewBtn">List</button></a>
+        <a href="calendar.html"><button id="calendarViewBtn">Calendar</button></a>
+        <a href="board.html"><button id="boardViewBtn">Board</button></a>
+    </div>
+        
+    <div class="container">
+        <div id="board-view" class="view active">
+            <div class="task-section">
+                <h3>General Tasks:</h3>
+                <input type="text" id="boardGeneralTasksInput" placeholder="New Task">
+                <button id="addBoardGeneralTaskBtn">Add Task</button>
+                <div class="tasks-container" id="boardGeneralTasksContainer"></div>
+            </div>
+            
+            <div class="task-section">
+                <h3>Do Today:</h3>
+                <input type="text" id="boardDoTodayTasksInput" placeholder="New Task">
+                <button id="addBoardDoTodayTaskBtn">Add Task</button>
+                <div class="tasks-container" id="boardDoTodayTasksContainer"></div>
+            </div>
+            <button class="add-section" onclick="addSection()">+ Add Section</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

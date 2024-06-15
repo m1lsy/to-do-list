@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar View</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body id="calendar">
+    <h1>Manage My Tasks</h1>
+    <div class="view-selector">
+        <a href="list.html"><button id="listViewBtn">List</button></a>
+        <a href="calendar.html"><button id="calendarViewBtn">Calendar</button></a>
+        <a href="board.html"><button id="boardViewBtn">Board</button></a>
+    </div>
+        
+    <div class="container">
+        <div id="calendarView" class="view active">
+            <div class="calendar-header">
+                <button id="prevMonth">‹</button>
+                <h2 id="currentMonth">June 2024</h2>
+                <button id="nextMonth">›</button>
+            </div>
+            <table id="calendar">
+                <thead>
+                    <tr>
+                        <th>MON</th>
+                        <th>TUE</th>
+                        <th>WED</th>
+                        <th>THU</th>
+                        <th>FRI</th>
+                        <th>SAT</th>
+                        <th>SUN</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

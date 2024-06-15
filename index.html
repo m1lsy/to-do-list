@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1>Manage My Tasks</h1>
+        <button id="add-task-btn">Add Task</button>
+    </header>
+    <main id="main-container">
+        <div id="layout-buttons">
+            <button id="list-layout-btn">List Layout</button>
+            <button id="calendar-layout-btn">Calendar Layout</button>
+            <button id="board-layout-btn">Board Layout</button>
+        </div>
+        <div id="list-layout" class="layout">
+            <h2>List</h2>
+            <ul id="task-list">
+                <!-- tasks will be rendered here -->
+            </ul>
+        </div>
+
+        <div id="calendar-layout" class="layout">
+            <h2>Calendar</h2>
+            <div id="calendar-container">
+                <div class="calendar-header">
+                  <button id="calendar-prev">Prev</button>
+                  <span id="calendar-month">{{ currentMonth }}</span>
+                  <button id="calendar-next">Next</button>
+                </div>
+                <div class="calendar-days">
+                  <!-- calendar days will be rendered here -->
+                </div>
+              </div>
+        </div>
+
+        <div id="board-layout" class="layout">
+            <h2>Board</h2>
+            <div id="board-container">
+                <!-- Board tasks will be dynamically rendered here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Add task -->
+    <div id="add-task-modal" class="modal">
+        <h2>Add Task</h2>
+        <form>
+            <input type="text" id="task-input" placeholder="Enter task name">
+            <input type="date" id="task-date" placeholder="Enter task date">
+            <button id="add-task-submit">Add Task</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
