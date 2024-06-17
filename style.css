@@ -1,7 +1,7 @@
 body {
     font-family: 'Poppins';
     margin: 20px;
-    background-color: #fff3f0;
+    background-color: #fcf6f5;
 }
 
 h2 {
@@ -9,7 +9,7 @@ h2 {
 }
 
 #list-layout-btn, #board-layout-btn, #calendar-layout-btn {
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 10px 10px 0 0;
     padding: 10px 20px;
     cursor: pointer;
@@ -17,7 +17,23 @@ h2 {
     position: relative;
     top: 1px;
     z-index: 1;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), -1px -1px 6px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px -1px 4px rgba(255, 255, 255, 0.5);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#list-layout-btn:hover, #board-layout-btn:hover, #calendar-layout-btn:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2), 0px -1px 6px rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+#list-layout-btn:active, #board-layout-btn:active, #calendar-layout-btn:active {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2), 0px -1px 4px rgba(255, 255, 255, 0.5);
+    transform: translateY(1px);
+}
+
+
+#list-layout {
+    background-color: #E8F3EB;
 }
 
 #list-layout-btn {
@@ -25,18 +41,32 @@ h2 {
 }
 
 #calendar-layout-btn {
-    background-color: #FFF8DC;
+    background-color: #FFEFDD;
+}
+
+#calendar-layout {
+    background-color: #FFEFDD;
 }
 
 #board-layout-btn {
     background-color: #C8E3FF;
 }
 
+#board-layout {
+    background-color: #C8E3FF;
+}
+
+
 #layout-buttons {
     display: flex;
     margin-bottom: -1px; /* Bring buttons slightly into the container */
 }
 
+#calendar-prev, #calendar-next {
+    background-color: #F5E0C9;
+    border: none;
+    padding: 10px;
+}
 .layout {
     display: none;
     padding: 20px;
@@ -63,7 +93,8 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #f0f0f0;
+    background-color: #18223b;
+    color: #FFFBFA;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -86,41 +117,20 @@ h2 {
 
 #task-list li {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #d0cece;
+    border-radius: 5px;
+    margin-bottom: 10px; 
+    background-color: #fffbfa;
 }
-
-#task-list li:last-child {
-    border-bottom: none;
-}
-
-#list-layout {
-    display: block;
-    background-color: #E8F3EB;
-    border-radius: 0 10px 10px 10px;
-}
-
-#board-layout {
-    background-color: #C8E3FF;
-    border-radius: 0 10px 10px 10px;
-}
-
-#calendar-layout {
-    background-color: #FFF8DC;
-    border-radius: 0 10px 10px 10px;
-}
-
 #board-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    justify-content: flex-start; /* Ensure tasks start from the left */
 }
 
-#main-container {
-    position: relative;
-}
 
 .board-task {
-    background-color: #e6eef7; 
+    background-color: #e6eef6;
     width: 150px;
     height: 150px;
     padding: 10px;
@@ -133,7 +143,20 @@ h2 {
     color: #333;
 }
 
-#delete-btn {
+.delete-btn-list {
+    margin-left: 10px;
+    border-radius: 50%;
+    color: #18223b;
+    width: 25px;
+    height: 25px;
+    border: 1.5px solid #18223b;
+    background-color: transparent;
+    cursor: pointer;
+    float: right;
+}
+
+.delete-btn-board {
+    border-radius: 50px;
     color: #18223b;
     width: 25px;
     height: 25px;
@@ -142,47 +165,51 @@ h2 {
     border-style: solid;
     border-color: #18223b;
     background-color: transparent;
-    position: relative; 
+    float: right;
 }
 
-#task-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 5fr);
+    gap: 5px;
+    margin-top: 10px;
 }
 
-.delete-btn-list {
-    margin-left: 10px; 
+.calendar-days-of-week {
+    display: contents;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.board-task {
-    background-color: #e6eef7; 
-    width: 150px;
-    height: 150px;
+.calendar-header {
+    text-align: center;
+}
+
+.calendar-days-of-week span {
+    font-weight: bold;
     padding: 10px;
-    margin: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #F5E0C9;
     border-radius: 5px;
-    position: relative; 
-    font-size: 14px;
-    line-height: 1.5;
-    color: #333;
-    padding-top: 30px; 
 }
 
-.delete-btn-board {
+.calendar-days {
+    display: contents;
+}
+
+.calendar-day {
+    padding: 30px;
+    background-color: #fbfbfb;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+    position: relative;
+}
+
+.calendar-day .task {
     position: absolute;
-    bottom: 20px; 
-    left: 95px;
-    background-color: transparent; 
-    color: #18223b;
-    width: 25px;
-    height: 25px;
-    border-radius: 50px;
-    border-width: 1.5px;
-    border-style: solid;
-    border-color: #18223b;
-    cursor: pointer; 
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    font-size: 12px;
+    color: #333;
 }
-
-

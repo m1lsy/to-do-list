@@ -24,35 +24,46 @@
                 <!-- tasks will be rendered here -->
             </ul>
         </div>
-
         <div id="calendar-layout" class="layout">
             <h2>Calendar</h2>
             <div id="calendar-container">
                 <div class="calendar-header">
-                  <button id="calendar-prev">Prev</button>
-                  <span id="calendar-month">{{ currentMonth }}</span>
-                  <button id="calendar-next">Next</button>
+                    <button id="calendar-prev">Prev</button>
+                    <span id="calendar-month">June</span>
+                    <button id="calendar-next">Next</button>
                 </div>
-                <div class="calendar-days">
-                  <!-- calendar days will be rendered here -->
+                <div class="calendar-grid">
+                    <div class="calendar-days-of-week">
+                        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                    </div>
+                    <div class="calendar-days">
+                        <!-- calendar days will be rendered here -->
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
-
         <div id="board-layout" class="layout">
             <h2>Board</h2>
             <div id="board-container">
-                <!-- Board tasks will be dynamically rendered here -->
+                <!-- Board tasks will be rendered here -->
             </div>
         </div>
     </main>
 
-    <!-- Add task -->
+    <!-- Add task modal -->
     <div id="add-task-modal" class="modal">
         <h2>Add Task</h2>
         <form>
             <input type="text" id="task-input" placeholder="Enter task name">
             <input type="date" id="task-date" placeholder="Enter task date">
+            <label for="task-color">Choose task color:</label>
+            <select id="task-color">
+                <option value="#FFFBFA">No Colour</option>
+                <option value="#FFEEC2">Yellow</option>
+                <option value="#D7EFFD">Blue</option>
+                <option value="#E5FDD7">Green</option>
+                <option value="#FCD8FF">Pink</option>
+            </select>
             <button id="add-task-submit">Add Task</button>
         </form>
     </div>
